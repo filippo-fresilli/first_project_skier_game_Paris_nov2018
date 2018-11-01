@@ -1,8 +1,6 @@
 
-var skierCanvas    = document.getElementById('skier');
 var obstacleCanvas = document.getElementById('obstacle');
 
-var sCtx = skierCanvas.getContext('2d');
 var oCtx = obstacleCanvas.getContext('2d');
 
 
@@ -23,11 +21,11 @@ class Obstacle {
 
         if(!skier.isCrashed){
 
-        this.y -= this.speedY;
-        this.x -= this.speedX; 
-        if(this.y < -this.height){
-            this.y = 1000;    
-        }
+            this.y -= this.speedY;
+            this.x -= this.speedX; 
+            if(this.y < -this.height){
+                this.y = 1000;    
+            }
         }
 
         oCtx.drawImage(this.image, this.x, this.y, this.width, this.height)
@@ -52,7 +50,7 @@ class Obstacle {
 
 }
 
-//creating skier
+//CREATING SKIER
 var skierImg = new Image();
 skierImg.src = "./images/skier_left.png";
 
@@ -66,7 +64,7 @@ var skier = {
 
     verDraw  : function() {
 
-        sCtx.drawImage(skierImg, this.x, this.y, this.width, this.height);
+        oCtx.drawImage(skierImg, this.x, this.y, this.width, this.height);
     },
 };
 
@@ -83,7 +81,7 @@ function changeSpeed(speedX,speedY) {
 }
 
 
-//creating new obstacles
+//CREATING NEW OBSTACLES
 var bgImg = new Image();
 bgImg.src = "./images/Artboard.png";
 
@@ -245,16 +243,16 @@ var gameOver = {
     opacity: 0,
     drawMe: function(){
         this.opacity += 0.01;
-        sCtx.globalAlpha = this.opacity;
-        sCtx.font = "bold 70px monospace"
+        oCtx.globalAlpha = this.opacity;
+        oCtx.font = "bold 70px monospace"
     
-        sCtx.fillStyle = "tomato";
-        sCtx.fillText("Game Over", 700, 300);
+        oCtx.fillStyle = "tomato";
+        oCtx.fillText("Game Over", 700, 300);
     
-        sCtx.lineWidth = 3;
-        sCtx.strokeText("Game Over", 700, 300);
+        oCtx.lineWidth = 3;
+        oCtx.strokeText("Game Over", 700, 300);
     
-        sCtx.globalAlpha = 1;
+        oCtx.globalAlpha = 1;
     }
 };
 
@@ -326,7 +324,7 @@ document.onkeydown = function () {
 };
 
 function drawingLoop() {
-    sCtx.clearRect(0, 0, 1500, 2000);
+
     oCtx.clearRect(0, 0, 1500, 2000);
 
         drawEverything();
@@ -338,8 +336,6 @@ function drawingLoop() {
     
 
 function drawEverything() {
-
-    oCtx.strokeRect(0, 0, 1000, 2000);
     
     // draw skier
     skier.verDraw();
