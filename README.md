@@ -1,3 +1,3 @@
 # first_project_skier_game_Paris_nov2018
 
-First Project at IRONHack Web Dev bootcamp October cohort
+First Project at <strong>IRON</strong>HACK Web Dev bootcamp October cohort
