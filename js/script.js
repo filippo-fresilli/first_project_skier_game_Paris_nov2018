@@ -505,8 +505,6 @@ function drawEverything() {
         gameOver.drawMe();
 
         yetiExit.style.display = "block";
-
-
     };
     
     allObstacles.forEach(function(oneObstacle){
