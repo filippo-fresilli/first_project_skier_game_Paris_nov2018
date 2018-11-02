@@ -38,7 +38,8 @@ class Obstacle {
             this.y -= this.speedY;
 
             if(this.x < -this.width){
-                this.x = 1500;    
+                this.x = 1500;
+                    
             }
             if(this.y < -this.height){
                 this.y = 1900;    
@@ -100,6 +101,11 @@ function changeSpeed(speedX,speedY) {
         horObstacles[i].speedY = speedY;
     } 
 
+    for (var i = 0; i < christmasTree.length; i++){
+        christmasTree[i].speedX = speedX;
+        christmasTree[i].speedY = speedY;
+    } 
+
 
 }
 
@@ -108,6 +114,12 @@ function changeSpeed(speedX,speedY) {
 
 var christmasTreeImg = new Image();
 christmasTreeImg.src = "./images/christmas_tree.png";
+
+var christmasTree =[
+
+    new Obstacle(christmasTreeImg, 1200, 451, 33, 40),
+    new Obstacle(christmasTreeImg, 90, 1691, 33, 40),
+];
 
 var treeImg = new Image();
 treeImg.src = "./images/evergreen-tree.png";
@@ -311,8 +323,6 @@ var allObstacles = [
     new Obstacle(treeImg, 1360,  900, 33, 40),
     new Obstacle(treeImg, 1190, 1000, 33, 40),
     new Obstacle(treeImg, 1200,  451, 33, 40),
-    new Obstacle(christmasTreeImg, 1200, 451, 33, 40),
-    new Obstacle(christmasTreeImg, 90, 1691, 33, 40),
 
     new Obstacle(snowManImg,  222,  387, 20, 20),
     new Obstacle(snowManImg,  922, 1420, 20, 20),
@@ -324,14 +334,17 @@ var allObstacles = [
 var flagImg = new Image();
 flagImg.src = "./images/bandiera_right.png";
 
+var flagLeftImg = new Image();
+flagLeftImg.src = "./images/bandiera_left.png";
+
 var flags = [
-    new Obstacle(flagImg, 300, 570, 30, 30),
+    new Obstacle(flagLeftImg, 300, 570, 30, 30),
     new Obstacle(flagImg, 400, 570, 30, 30),
 
-    new Obstacle(flagImg, 1100, 1370, 30, 30),
+    new Obstacle(flagLeftImg, 1100, 1370, 30, 30),
     new Obstacle(flagImg, 1200, 1370, 30, 30),
 
-    new Obstacle(flagImg, 700, 100, 30, 30),
+    new Obstacle(flagLeftImg, 700, 100, 30, 30),
     new Obstacle(flagImg, 800, 100, 30, 30),
 ];
 
@@ -361,10 +374,11 @@ var gameOver = {
     
     
         oCtx.globalAlpha = 1;
-
         // INSERT BUTTON TO Start From SKretch
     }
 };
+
+
 
 drawingLoop();
 
@@ -470,12 +484,30 @@ function drawingLoop() {
         });
 }
     
+// declaring how many flags I taken
+var flagsTaken = 0;
+
+
+
 
 function drawEverything() {
     
     // draw skier
     skier.verDraw();
 
+    var scoresPanel = document.querySelector("span");
+    scoresPanel.innerHTML = flagsTaken;
+
+    // YETI EXIT
+    var yetiExit = document.querySelector(".yeti");
+
+    if(flagsTaken >= 20){
+        gameOver.drawMe();
+
+        yetiExit.style.display = "block";
+
+
+    };
     
     allObstacles.forEach(function(oneObstacle){
             
@@ -513,25 +545,65 @@ function drawEverything() {
         }
     });  
 
+    //flags taken
     flags.forEach(function(oneFlag){
                     
-            oneFlag.flagDraw();
+        oneFlag.flagDraw();
             
-            if(rectangleCollision(skier, oneFlag)){
-                // skier.isCrashed = true;
-                // oneFlag.isCrashed = true;
-            }
-            
-        if(skier.isCrashed){
-            gameOver.drawMe();
+        if(!oneFlag.isCrashed && rectangleCollision(skier, oneFlag)){
+            oneFlag.isCrashed = true;
+            flagsTaken++;
+            console.log(flagsTaken);
+
+            setTimeout(function(){
+                oneFlag.isCrashed=false
+            }, 2000)
+
         }
+        
+
+        // if(oneFlag.isCrashed){
+        //     flagsTaken++;
+        // }
     });
+
+    //CHRISTMASTREE BECOME FLAG
+    christmasTree.forEach(function(cTree){
+                    
+        cTree.verDraw();
+        
+        if(christmasTreeCollision(skier, cTree)){
+            skier.isCrashed = true;
+            cTree.isCrashed = true;
+        }
+        
+        if(cTree === true){
+            flagImg.verDraw();
+
+        }
+
+    });
+
 
 }
 
 
 
 function rectangleCollision(rectA, rectB) {
+    return rectA.y + rectA.height >= rectB.y
+    &&     rectA.y <= rectB.y + rectB.height
+    &&     rectA.x + rectA.width >= rectB.x
+    &&     rectA.x <= rectB.x + rectB.width;
+}
+
+// function halfRectCollision(rectA, rectB) {
+//     return rectA.y + rectA.height >= rectB.y
+//     &&     rectA.y <= rectB.y + rectB.height
+//     &&     rectA.x + rectA.width >= rectB.x
+//     &&     rectA.x <= rectB.x + rectB.width;
+// }
+
+function christmasTreeCollision(rectA, rectB) {
     return rectA.y + rectA.height >= rectB.y
     &&     rectA.y <= rectB.y + rectB.height
     &&     rectA.x + rectA.width >= rectB.x
