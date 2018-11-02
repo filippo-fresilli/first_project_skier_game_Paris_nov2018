@@ -47,11 +47,28 @@ h1 {
 .made-with-love{
     color: white;
     margin:0;
+    margin-right: 10px;
 }
 
 footer{
     position: fixed;
     bottom: 0;
     width: 100vw;
+    display: flex;
+    justify-content: center;
 }
+
+.link-original {
+    color: gainsboro;
+}
+
+.link-iron {
+    color: #00b4fe;
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+
 

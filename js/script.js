@@ -24,7 +24,7 @@ class Obstacle {
             this.y -= this.speedY;
             this.x -= this.speedX; 
             if(this.y < -this.height){
-                this.y = 1000;    
+                this.y = 1900;    
             }
         }
 
@@ -41,7 +41,7 @@ class Obstacle {
                 this.x = 1500;    
             }
             if(this.y < -this.height){
-                this.y = 1000;    
+                this.y = 1900;    
             }
         }
     
@@ -55,7 +55,7 @@ class Obstacle {
             this.y -= this.speedY;
             this.x -= this.speedX; 
             if(this.y < -this.height){
-                this.y = 1000;    
+                this.y = 1900;    
             }
         }
 
@@ -106,6 +106,9 @@ function changeSpeed(speedX,speedY) {
 
 //CREATING NEW OBSTACLES
 
+var christmasTreeImg = new Image();
+christmasTreeImg.src = "./images/christmas_tree.png";
+
 var treeImg = new Image();
 treeImg.src = "./images/evergreen-tree.png";
 
@@ -120,140 +123,216 @@ tornadoImg.src = "./images/tornado.png";
 
 var horObstacles =[
         //            (img    , x, y, wi, hei)
-    new Obstacle(tornadoImg, 2000, 1550, 35, 40),
-    new Obstacle(tornadoImg, 1230, 1500, 35, 40),
-    new Obstacle(rennaImg, 530, 1800, 35, 40),
-    new Obstacle(rennaImg, 1500, 1000, 35, 40),
+    new Obstacle(tornadoImg, 2700, 1050, 70, 80),
+    new Obstacle(tornadoImg, 1800, 1800, 70, 80),
+    new Obstacle(rennaImg, 1500, 700, 30, 30),
+    new Obstacle(rennaImg, 1900, 1400, 30, 30),
 ];
 
 var allObstacles = [
     //          (img    , x, y, wi, hei)
-    // tree osbstacles right
-    new Obstacle(treeImg, -35, 40, 35, 40 ),
-    new Obstacle(treeImg, -35, 120, 35, 40),
-    new Obstacle(treeImg, -35, 200, 35, 40),
-    new Obstacle(treeImg, -35, 280, 35, 40),
-    new Obstacle(treeImg, -35, 360, 35, 40),
-    new Obstacle(treeImg, -35, 440, 35, 40),
-    new Obstacle(treeImg, -35, 520, 35, 40),
-    new Obstacle(treeImg, -35, 600, 35, 40),
-    new Obstacle(treeImg, -35, 680, 35, 40),
-    new Obstacle(treeImg, -35, 760, 35, 40),
-    new Obstacle(treeImg, -35, 840, 35, 40),
-    new Obstacle(treeImg, -35, 920, 35, 40),
-    new Obstacle(treeImg, -35, 1000, 35, 40),
-    new Obstacle(treeImg, -35, 1080, 35, 40),
+    // tree osbstacles left
+    new Obstacle(treeImg, -33,  40, 33, 40),
+    new Obstacle(treeImg, -33, 120, 33, 40),
+    new Obstacle(treeImg, -33, 200, 33, 40),
+    new Obstacle(treeImg, -33, 280, 33, 40),
+    new Obstacle(treeImg, -33, 360, 33, 40),
+    new Obstacle(treeImg, -33, 440, 33, 40),
+    new Obstacle(treeImg, -33, 520, 33, 40),
+    new Obstacle(treeImg, -33, 600, 33, 40),
+    new Obstacle(treeImg, -33, 680, 33, 40),
+    new Obstacle(treeImg, -33, 760, 33, 40),
+    new Obstacle(treeImg, -33, 840, 33, 40),
+    new Obstacle(treeImg, -33, 920, 33, 40),
+    new Obstacle(treeImg, -33, 1000, 33, 40),
+    new Obstacle(treeImg, -33, 1080, 33, 40),
+    new Obstacle(treeImg, -33, 1160, 33, 40),
+    new Obstacle(treeImg, -33, 1240, 33, 40),
+    new Obstacle(treeImg, -33, 1320, 33, 40),
+    new Obstacle(treeImg, -33, 1400, 33, 40),
+    new Obstacle(treeImg, -33, 1480, 33, 40),
+    new Obstacle(treeImg, -33, 1560, 33, 40),
+    new Obstacle(treeImg, -33, 1640, 33, 40),
+    new Obstacle(treeImg, -33, 1720, 33, 40),
+    new Obstacle(treeImg, -33, 1800, 33, 40),
+    new Obstacle(treeImg, -33, 1880, 33, 40),
+    new Obstacle(treeImg, -33, 1960, 33, 40),
 
-    new Obstacle(treeImg, -75, 0, 35, 40),
-    new Obstacle(treeImg, -75,  80, 35, 40),
-    new Obstacle(treeImg, -75, 160, 35, 40),
-    new Obstacle(treeImg, -75, 240, 35, 40),
-    new Obstacle(treeImg, -75, 320, 35, 40),
-    new Obstacle(treeImg, -75, 400, 35, 40),
-    new Obstacle(treeImg, -75, 480, 35, 40),
-    new Obstacle(treeImg, -75, 560, 35, 40),
-    new Obstacle(treeImg, -75, 640, 35, 40),
-    new Obstacle(treeImg, -75, 720, 35, 40),
-    new Obstacle(treeImg, -75, 800, 35, 40),
-    new Obstacle(treeImg, -75, 880, 35, 40),
-    new Obstacle(treeImg, -75, 960, 35, 40),
+    new Obstacle(treeImg, -66,   0, 33, 40),
+    new Obstacle(treeImg, -66,  80, 33, 40),
+    new Obstacle(treeImg, -66, 160, 33, 40),
+    new Obstacle(treeImg, -66, 240, 33, 40),
+    new Obstacle(treeImg, -66, 320, 33, 40),
+    new Obstacle(treeImg, -66, 400, 33, 40),
+    new Obstacle(treeImg, -66, 480, 33, 40),
+    new Obstacle(treeImg, -66, 560, 33, 40),
+    new Obstacle(treeImg, -66, 640, 33, 40),
+    new Obstacle(treeImg, -66, 720, 33, 40),
+    new Obstacle(treeImg, -66, 800, 33, 40),
+    new Obstacle(treeImg, -66, 880, 33, 40),
+    new Obstacle(treeImg, -66, 960, 33, 40),
+    new Obstacle(treeImg, -66, 1040, 33, 40),
+    new Obstacle(treeImg, -66, 1120, 33, 40),
+    new Obstacle(treeImg, -66, 1200, 33, 40),
+    new Obstacle(treeImg, -66, 1280, 33, 40),
+    new Obstacle(treeImg, -66, 1360, 33, 40),
+    new Obstacle(treeImg, -66, 1440, 33, 40),
+    new Obstacle(treeImg, -66, 1520, 33, 40),
+    new Obstacle(treeImg, -66, 1600, 33, 40),
+    new Obstacle(treeImg, -66, 1680, 33, 40),
+    new Obstacle(treeImg, -66, 1760, 33, 40),
+    new Obstacle(treeImg, -66, 1840, 33, 40),
+    new Obstacle(treeImg, -66, 1920, 33, 40),
+    new Obstacle(treeImg, -66, 2000, 33, 40),
 
-    new Obstacle(treeImg, -100, 40, 35, 40 ),
-    new Obstacle(treeImg, -100, 120, 35, 40),
-    new Obstacle(treeImg, -100, 200, 35, 40),
-    new Obstacle(treeImg, -100, 280, 35, 40),
-    new Obstacle(treeImg, -100, 360, 35, 40),
-    new Obstacle(treeImg, -100, 440, 35, 40),
-    new Obstacle(treeImg, -100, 520, 35, 40),
-    new Obstacle(treeImg, -100, 600, 35, 40),
-    new Obstacle(treeImg, -100, 680, 35, 40),
-    new Obstacle(treeImg, -100, 760, 35, 40),
-    new Obstacle(treeImg, -100, 840, 35, 40),
-    new Obstacle(treeImg, -100, 920, 35, 40),
-    new Obstacle(treeImg, -100, 1000, 35, 40),
-    new Obstacle(treeImg, -100, 1080, 35, 40),
+    new Obstacle(treeImg, -99,  40, 33, 40),
+    new Obstacle(treeImg, -99, 120, 33, 40),
+    new Obstacle(treeImg, -99, 200, 33, 40),
+    new Obstacle(treeImg, -99, 280, 33, 40),
+    new Obstacle(treeImg, -99, 360, 33, 40),
+    new Obstacle(treeImg, -99, 440, 33, 40),
+    new Obstacle(treeImg, -99, 520, 33, 40),
+    new Obstacle(treeImg, -99, 600, 33, 40),
+    new Obstacle(treeImg, -99, 680, 33, 40),
+    new Obstacle(treeImg, -99, 760, 33, 40),
+    new Obstacle(treeImg, -99, 840, 33, 40),
+    new Obstacle(treeImg, -99, 920, 33, 40),
+    new Obstacle(treeImg, -99, 1000, 33, 40),
+    new Obstacle(treeImg, -99, 1080, 33, 40),
+    new Obstacle(treeImg, -99, 1160, 33, 40),
+    new Obstacle(treeImg, -99, 1240, 33, 40),
+    new Obstacle(treeImg, -99, 1320, 33, 40),
+    new Obstacle(treeImg, -99, 1400, 33, 40),
+    new Obstacle(treeImg, -99, 1480, 33, 40),
+    new Obstacle(treeImg, -99, 1560, 33, 40),
+    new Obstacle(treeImg, -99, 1640, 33, 40),
+    new Obstacle(treeImg, -99, 1720, 33, 40),
+    new Obstacle(treeImg, -99, 1800, 33, 40),
+    new Obstacle(treeImg, -99, 1880, 33, 40),
+    new Obstacle(treeImg, -99, 1960, 33, 40),
     
         //          (img    , x, y, wi, hei)
-    // tree osbstacles left
-    new Obstacle(treeImg, 1500, 40, 35, 40 ),
-    new Obstacle(treeImg, 1500, 120, 35, 40),
-    new Obstacle(treeImg, 1500, 200, 35, 40),
-    new Obstacle(treeImg, 1500, 280, 35, 40),
-    new Obstacle(treeImg, 1500, 360, 35, 40),
-    new Obstacle(treeImg, 1500, 440, 35, 40),
-    new Obstacle(treeImg, 1500, 520, 35, 40),
-    new Obstacle(treeImg, 1500, 600, 35, 40),
-    new Obstacle(treeImg, 1500, 680, 35, 40),
-    new Obstacle(treeImg, 1500, 760, 35, 40),
-    new Obstacle(treeImg, 1500, 840, 35, 40),
-    new Obstacle(treeImg, 1500, 920, 35, 40),
-    new Obstacle(treeImg, 1500, 1000, 35, 40),
-    new Obstacle(treeImg, 1500, 1080, 35, 40),
+    // tree osbstacles right
+    new Obstacle(treeImg, 1500,  40, 33, 40),
+    new Obstacle(treeImg, 1500, 120, 33, 40),
+    new Obstacle(treeImg, 1500, 200, 33, 40),
+    new Obstacle(treeImg, 1500, 280, 33, 40),
+    new Obstacle(treeImg, 1500, 360, 33, 40),
+    new Obstacle(treeImg, 1500, 440, 33, 40),
+    new Obstacle(treeImg, 1500, 520, 33, 40),
+    new Obstacle(treeImg, 1500, 600, 33, 40),
+    new Obstacle(treeImg, 1500, 680, 33, 40),
+    new Obstacle(treeImg, 1500, 760, 33, 40),
+    new Obstacle(treeImg, 1500, 840, 33, 40),
+    new Obstacle(treeImg, 1500, 920, 33, 40),
+    new Obstacle(treeImg, 1500, 1000, 33, 40),
+    new Obstacle(treeImg, 1500, 1080, 33, 40),
+    new Obstacle(treeImg, 1500, 1160, 33, 40),
+    new Obstacle(treeImg, 1500, 1240, 33, 40),
+    new Obstacle(treeImg, 1500, 1320, 33, 40),
+    new Obstacle(treeImg, 1500, 1400, 33, 40),
+    new Obstacle(treeImg, 1500, 1480, 33, 40),
+    new Obstacle(treeImg, 1500, 1560, 33, 40),
+    new Obstacle(treeImg, 1500, 1640, 33, 40),
+    new Obstacle(treeImg, 1500, 1720, 33, 40),
+    new Obstacle(treeImg, 1500, 1800, 33, 40),
+    new Obstacle(treeImg, 1500, 1880, 33, 40),
+    new Obstacle(treeImg, 1500, 1960, 33, 40),
 
-    new Obstacle(treeImg, 1535, 0, 35, 40),
-    new Obstacle(treeImg, 1535,  80, 35, 40),
-    new Obstacle(treeImg, 1535, 160, 35, 40),
-    new Obstacle(treeImg, 1535, 240, 35, 40),
-    new Obstacle(treeImg, 1535, 320, 35, 40),
-    new Obstacle(treeImg, 1535, 400, 35, 40),
-    new Obstacle(treeImg, 1535, 480, 35, 40),
-    new Obstacle(treeImg, 1535, 560, 35, 40),
-    new Obstacle(treeImg, 1535, 640, 35, 40),
-    new Obstacle(treeImg, 1535, 720, 35, 40),
-    new Obstacle(treeImg, 1535, 800, 35, 40),
-    new Obstacle(treeImg, 1535, 880, 35, 40),
-    new Obstacle(treeImg, 1535, 960, 35, 40),
+    new Obstacle(treeImg, 1533,   0, 33, 40),
+    new Obstacle(treeImg, 1533,  80, 33, 40),
+    new Obstacle(treeImg, 1533, 160, 33, 40),
+    new Obstacle(treeImg, 1533, 240, 33, 40),
+    new Obstacle(treeImg, 1533, 320, 33, 40),
+    new Obstacle(treeImg, 1533, 400, 33, 40),
+    new Obstacle(treeImg, 1533, 480, 33, 40),
+    new Obstacle(treeImg, 1533, 560, 33, 40),
+    new Obstacle(treeImg, 1533, 640, 33, 40),
+    new Obstacle(treeImg, 1533, 720, 33, 40),
+    new Obstacle(treeImg, 1533, 800, 33, 40),
+    new Obstacle(treeImg, 1533, 880, 33, 40),
+    new Obstacle(treeImg, 1533, 960, 33, 40),
+    new Obstacle(treeImg, 1533, 1040, 33, 40),
+    new Obstacle(treeImg, 1533, 1120, 33, 40),
+    new Obstacle(treeImg, 1533, 1200, 33, 40),
+    new Obstacle(treeImg, 1533, 1280, 33, 40),
+    new Obstacle(treeImg, 1533, 1360, 33, 40),
+    new Obstacle(treeImg, 1533, 1440, 33, 40),
+    new Obstacle(treeImg, 1533, 1520, 33, 40),
+    new Obstacle(treeImg, 1533, 1600, 33, 40),
+    new Obstacle(treeImg, 1533, 1680, 33, 40),
+    new Obstacle(treeImg, 1533, 1760, 33, 40),
+    new Obstacle(treeImg, 1533, 1840, 33, 40),
+    new Obstacle(treeImg, 1533, 1920, 33, 40),
+    new Obstacle(treeImg, 1533, 2000, 33, 40),
 
-    new Obstacle(treeImg, 1570, 40, 35, 40 ),
-    new Obstacle(treeImg, 1570, 120, 35, 40),
-    new Obstacle(treeImg, 1570, 200, 35, 40),
-    new Obstacle(treeImg, 1570, 280, 35, 40),
-    new Obstacle(treeImg, 1570, 360, 35, 40),
-    new Obstacle(treeImg, 1570, 440, 35, 40),
-    new Obstacle(treeImg, 1570, 520, 35, 40),
-    new Obstacle(treeImg, 1570, 600, 35, 40),
-    new Obstacle(treeImg, 1570, 680, 35, 40),
-    new Obstacle(treeImg, 1570, 760, 35, 40),
-    new Obstacle(treeImg, 1570, 840, 35, 40),
-    new Obstacle(treeImg, 1570, 920, 35, 40),
-    new Obstacle(treeImg, 1570, 1000, 35, 40),
-    new Obstacle(treeImg, 1570, 1080, 35, 40),
+    new Obstacle(treeImg, 1566,  40, 33, 40),
+    new Obstacle(treeImg, 1566, 120, 33, 40),
+    new Obstacle(treeImg, 1566, 200, 33, 40),
+    new Obstacle(treeImg, 1566, 280, 33, 40),
+    new Obstacle(treeImg, 1566, 360, 33, 40),
+    new Obstacle(treeImg, 1566, 440, 33, 40),
+    new Obstacle(treeImg, 1566, 520, 33, 40),
+    new Obstacle(treeImg, 1566, 600, 33, 40),
+    new Obstacle(treeImg, 1566, 680, 33, 40),
+    new Obstacle(treeImg, 1566, 760, 33, 40),
+    new Obstacle(treeImg, 1566, 840, 33, 40),
+    new Obstacle(treeImg, 1566, 920, 33, 40),
+    new Obstacle(treeImg, 1566, 1000, 33, 40),
+    new Obstacle(treeImg, 1566, 1080, 33, 40),
+    new Obstacle(treeImg, 1566, 1160, 33, 40),
+    new Obstacle(treeImg, 1566, 1240, 33, 40),
+    new Obstacle(treeImg, 1566, 1320, 33, 40),
+    new Obstacle(treeImg, 1566, 1400, 33, 40),
+    new Obstacle(treeImg, 1566, 1480, 33, 40),
+    new Obstacle(treeImg, 1566, 1560, 33, 40),
+    new Obstacle(treeImg, 1566, 1640, 33, 40),
+    new Obstacle(treeImg, 1566, 1720, 33, 40),
+    new Obstacle(treeImg, 1566, 1800, 33, 40),
+    new Obstacle(treeImg, 1566, 1880, 33, 40),
+    new Obstacle(treeImg, 1566, 1960, 33, 40),
 
         //          (img    , x, y, wi, hei)
-    new Obstacle(treeImg, 333, 40, 35, 40 ),
-    new Obstacle(treeImg, 1340, 120, 35, 40),
-    new Obstacle(treeImg, 859, 200, 35, 40),
-    new Obstacle(treeImg, 350, 280, 35, 40),
-    new Obstacle(treeImg, 1200, 360, 35, 40),
-    new Obstacle(treeImg, 678, 440, 35, 40),
-    new Obstacle(treeImg, 890, 520, 35, 40),
+    new Obstacle(treeImg, 333,   40, 33, 40),
+    new Obstacle(treeImg, 1340, 120, 33, 40),
+    new Obstacle(treeImg, 859,  200, 33, 40),
+    new Obstacle(treeImg, 350,  280, 33, 40),
+    new Obstacle(treeImg, 1200, 360, 33, 40),
+    new Obstacle(treeImg, 678,  440, 33, 40),
+    new Obstacle(treeImg, 890,  520, 33, 40),
 
-    new Obstacle(treeImg, 50, 900, 35, 40 ),
-    new Obstacle(treeImg, 100, 450, 35, 40 ),
-    new Obstacle(treeImg, 500, 300, 35, 40),
-    new Obstacle(treeImg, 600, 400, 35, 40),
-    new Obstacle(treeImg, 810,300, 35, 40),
-    new Obstacle(treeImg, 120, 120, 35, 40),
-    new Obstacle(treeImg, 570, 800, 35, 40),
-    new Obstacle(treeImg, 1360, 900, 35, 40),
-    new Obstacle(treeImg, 1190,1000, 35, 40),
-    new Obstacle(treeImg, 1200, 451, 35, 40),
+    new Obstacle(treeImg,   50,  900, 33, 40),
+    new Obstacle(treeImg,  100,  450, 33, 40),
+    new Obstacle(treeImg,  500,  300, 33, 40),
+    new Obstacle(treeImg,  600,  400, 33, 40),
+    new Obstacle(treeImg,  810,  300, 33, 40),
+    new Obstacle(treeImg,  120,  120, 33, 40),
+    new Obstacle(treeImg,  570,  800, 33, 40),
+    new Obstacle(treeImg, 1360,  900, 33, 40),
+    new Obstacle(treeImg, 1190, 1000, 33, 40),
+    new Obstacle(treeImg, 1200,  451, 33, 40),
+    new Obstacle(christmasTreeImg, 1200, 451, 33, 40),
+    new Obstacle(christmasTreeImg, 90, 1691, 33, 40),
 
-    new Obstacle(snowManImg, 222, 300, 25, 28),
-    new Obstacle(snowManImg, 822, 1420, 25, 28),
-    new Obstacle(snowManImg, 1000, 1230, 25, 28),
-    new Obstacle(snowManImg, 1110, 1000, 25, 28),
+    new Obstacle(snowManImg,  222,  387, 20, 20),
+    new Obstacle(snowManImg,  922, 1420, 20, 20),
+    new Obstacle(snowManImg, 1000, 1230, 20, 20),
+    new Obstacle(snowManImg, 1110, 1000, 20, 20),
+    new Obstacle(snowManImg, 757,  1682, 20, 20),
 ];
 
 var flagImg = new Image();
-flagImg.src = "./images/bandiera.png";
+flagImg.src = "./images/bandiera_right.png";
 
 var flags = [
-    new Obstacle(flagImg, 400, 500, 30, 35),
-    new Obstacle(flagImg, 500, 500, 30, 35),
+    new Obstacle(flagImg, 300, 570, 30, 30),
+    new Obstacle(flagImg, 400, 570, 30, 30),
 
-    new Obstacle(flagImg, 1300, 1650, 30, 35),
-    new Obstacle(flagImg, 1400, 1650, 30, 35),
+    new Obstacle(flagImg, 1100, 1370, 30, 30),
+    new Obstacle(flagImg, 1200, 1370, 30, 30),
+
+    new Obstacle(flagImg, 700, 100, 30, 30),
+    new Obstacle(flagImg, 800, 100, 30, 30),
 ];
 
 
@@ -332,8 +411,12 @@ document.onkeydown = function () {
         case 38:  // up arrow
 
         //fix bug here
+        
         event.preventDefault();
         skier.y -= 10;
+        if(skier.y < 0){
+            skier.y= 0
+        }
         break;
 
         case 39:  // right arrow
